@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/user.css">
+    <title>Login/Signup</title>
+</head>
+
+<body>
+    <div class="form-structor">
+        <form onsubmit="return false;">
+            <div class="signup">
+                <h2 class="form-title" id="signup"><span>Expense Tracker<br></span>Sign up</h2>
+                <div class="form-holder">
+                    <input class="input" type="text" placeholder="Name" name="name" id="name" required />
+                    <input class="input" type="email" placeholder="Email" name="email" id="signupEmail" required />
+                    <input class="input" type="password" id="signupPassword" placeholder="Password" name="password"
+                        required />
+                </div>
+                <button id="signUpBtn" class="submit-btn">Sign up</button>
+            </div>
+        </form>
+        <div id="messageBox"></div>
+
+        <form onsubmit="return false;">
+            <div class="login slide-up">
+                <div class="center">
+                    <h2 class="form-title" id="login"><span>Expense Tracker<br></span>Log in</h2>
+                    <div class="form-holder">
+                        <input class="input" type="email" placeholder="Email" name="email" id="loginEmail" required />
+                        <input class="input" type="password" id="loginPassword" placeholder="Password" name="password"
+                            required />
+                    </div>
+                    <button id="signInBtn" class="submit-btn">Log in</button>
+                    <a style="width: 140px; padding-right: 13%;" class="submit-btn"
+                        href="password/forgot-password">Forgot
+                        Password?</a>
+                    <!-- Added the Forgot Password link -->
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+    <script src="../js/user.js"></script>
+    <script src="../js/signin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
