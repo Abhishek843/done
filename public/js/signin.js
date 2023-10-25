@@ -55,7 +55,7 @@ function signup() {
 
   // Send a POST request to the server to sign up the user.
   axios
-    .post('${HOST}/signup', signUpDetails)
+    .post('http://23.21.28.1:3200/signup', signUpDetails)
     .then((result) => {
       // Display a success message.
       alert('Done! You Can Login Now.');
