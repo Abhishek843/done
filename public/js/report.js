@@ -44,7 +44,7 @@ async function getDailyReport(e) {
 
     // Send a POST request to retrieve daily expense reports
     const res = await axios.post(
-      "http://23.21.28.1:3200/reports/dailyReports",
+      "${HOST}/reports/dailyReports",
       {
         date: formattedDate,
       },
@@ -116,7 +116,7 @@ async function download() {
 
     // Send a GET request to retrieve the report data from the server
     const res = await axios.get(
-      "http://23.21.28.1:3200/reports/downloadReport",
+      "${HOST}/reports/downloadReport",
       {
         headers: { Authorization: token },
         responseType: "blob", // Set the response type to "blob" for binary data
@@ -158,7 +158,7 @@ async function getMonthlyReport(e) {
 
     // Send a POST request to retrieve monthly expense reports
     const res = await axios.post(
-      "http://23.21.28.1:3200/reports/monthlyReports",
+      "${HOST}/reports/monthlyReports",
       {
         month: formattedMonth,
       },

@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+
 const path = require('path');
 
 const Sib = require('sib-api-v3-sdk');
@@ -47,13 +48,14 @@ exports.postForgotPassword = async (req, res) => {
 
         const sender = { email: process.env.SIB_SENDER_EMAIL };
         const receivers = [{ email: ReceiverEmail }];
+        const HOST = req.headers.origin;
 
         const result = await tranEmailApi.sendTransacEmail({
             sender: sender,
             to: receivers,
             subject: 'Password reset link',
             htmlContent: `
-                <a href="http://23.21.28.1:3200/password/reset-password/${id}" target="_blank">
+                <a href="${HOST}/password/reset-password/${id}" target="_blank">
                     Click here to reset password
                 </a>
             `

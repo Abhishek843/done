@@ -12,6 +12,7 @@ const signUpPassword = document.getElementById("signupPassword");
 // Function to handle the login process.
 function login() {
   // Create an object with login details from the input fields.
+  
   const loginDetails = {
     loginEmail: loginEmail.value, // Get the email from the loginEmail input field
     loginPassword: loginPassword.value, // Get the password from the loginPassword input field
@@ -54,7 +55,7 @@ function signup() {
 
   // Send a POST request to the server to sign up the user.
   axios
-    .post("http://23.21.28.1:3200/signup", signUpDetails)
+    .post('${HOST}/signup', signUpDetails)
     .then((result) => {
       // Display a success message.
       alert('Done! You Can Login Now.');

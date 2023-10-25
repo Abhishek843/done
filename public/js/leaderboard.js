@@ -36,7 +36,7 @@ categoryItems.forEach((item) => {
 async function getLeaderboard() {
   try {
     // Send a GET request to retrieve the leaderboard data from an API
-    const res = await axios.get("http://23.21.28.1:3200/premium/getLeaderboard");
+    const res = await axios.get("${HOST}/premium/getLeaderboard");
     
     let position = 1; // Initialize the position variable to 1
 
