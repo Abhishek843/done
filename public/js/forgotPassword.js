@@ -10,7 +10,7 @@ function forgotPassword(e){
     const user = {
         email: emailInput.value
     };
-    axios.post(`${HOST}/password/forgot-password`, user)
+    axios.post(`http://23.21.28.1:3200/password/forgot-password`, user)
     .then((res) => {
         const msg = res.data.msg;
         showSuccessInDOM(msg);
