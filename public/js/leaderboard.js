@@ -33,11 +33,15 @@ categoryItems.forEach((item) => {
 });
 
 // Define an asynchronous function to get the leaderboard data
+// Define an asynchronous function to get the leaderboard data
 async function getLeaderboard() {
   try {
+    // Extract the host from the current URL
+    const host = window.location.host;
+
     // Send a GET request to retrieve the leaderboard data from an API
-    const res = await axios.get("http://23.21.28.1:3200/premium/getLeaderboard");
-    
+    const res = await axios.get(`http://${host}/premium/getLeaderboard`);
+
     let position = 1; // Initialize the position variable to 1
 
     // Loop through the data and create table rows to display the leaderboard
@@ -72,6 +76,7 @@ async function getLeaderboard() {
     console.log(error);
   }
 }
+
 
 // Add a click event listener to the logout button to trigger the logout function
 logoutBtn.addEventListener("click", logout);
