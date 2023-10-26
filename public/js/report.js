@@ -42,9 +42,12 @@ async function getDailyReport(e) {
 
     let totalAmount = 0; // Initialize a variable to calculate the total amount
 
+    // Get the host from the current URL
+    const host = window.location.host;
+
     // Send a POST request to retrieve daily expense reports
     const res = await axios.post(
-      "http://23.21.28.1:3200/reports/dailyReports",
+      `http://${host}/reports/dailyReports`,
       {
         date: formattedDate,
       },
@@ -110,13 +113,17 @@ async function getDailyReport(e) {
     console.log(error);
   }
 }
+
 async function download() {
   try {
     const token = localStorage.getItem("token"); // Get the user's token from local storage
 
+    // Get the host from the current URL
+    const host = window.location.host;
+
     // Send a GET request to retrieve the report data from the server
     const res = await axios.get(
-      "http://23.21.28.1:3200/reports/downloadReport",
+      `http://${host}/reports/downloadReport`,
       {
         headers: { Authorization: token },
         responseType: "blob", // Set the response type to "blob" for binary data
@@ -156,9 +163,12 @@ async function getMonthlyReport(e) {
 
     let totalAmount = 0; // Initialize a variable to calculate the total amount
 
+    // Get the host from the current URL
+    const host = window.location.host;
+
     // Send a POST request to retrieve monthly expense reports
     const res = await axios.post(
-      "http://23.21.28.1:3200/reports/monthlyReports",
+      `http://${host}/reports/monthlyReports`,
       {
         month: formattedMonth,
       },
@@ -229,4 +239,4 @@ async function getMonthlyReport(e) {
 logoutBtn.addEventListener("click", logout);
 dateShowBtn.addEventListener("click", getDailyReport);
 monthShowBtn.addEventListener("click", getMonthlyReport);
-downloadBtn.addEventListener("click",download);
+downloadBtn.addEventListener("click", download);
