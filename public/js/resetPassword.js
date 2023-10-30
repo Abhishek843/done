@@ -16,7 +16,7 @@ function resetPassword(e){
         password: password1Input.value,
         link: window.location.href
     };
-    axios.post(`http://23.21.28.1:3200/password/reset-password`, user)
+    axios.post(`http://35.153.73.136:3200/password/reset-password`, user)
     .then((res) => {
         const msg = res.data.msg;
         showSuccessInDOM(msg);
